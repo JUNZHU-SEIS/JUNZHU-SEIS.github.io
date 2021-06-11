@@ -274,7 +274,7 @@ driver   : xserver-xorg-video-nouveau - distro free builtin
 </code></pre>
 <pre><code class="language-bash">sudo ubuntu-drivers autoinstall
 </code></pre>
-<p><strong>Restart your machine</strong></p>
+<h1 id="restart-your-machine">Restart your machine</h1>
 <h1 id="list-available-cuda">List available CUDA</h1>
 <pre><code class="language-bash">nvidia-smi
 </code></pre>
@@ -319,10 +319,10 @@ driver   : xserver-xorg-video-nouveau - distro free builtin
 <pre><code>sudo sh cuda_11.2.0_460.27.04_linux.run
 </code></pre>
 <ol>
-<li>follow <a href="https://docs.nvidia.com/cuda/archive/11.2.0/cuda-installation-guide-linux/index.html">CUDA11.2.0 DOCUMENT</a> and <a href="https://zhuanlan.zhihu.com/p/122286055">zhihu</a></li>
-<li>test installation
-<strong>nvcc</strong></li>
+<li>follow the details on <a href="https://docs.nvidia.com/cuda/archive/11.2.0/cuda-installation-guide-linux/index.html">CUDA11.2.0 DOCUMENT</a> and <a href="https://zhuanlan.zhihu.com/p/122286055">zhihu blog</a></li>
 </ol>
+<h1 id="test-installation-optional">Test installation (optional)</h1>
+<p><strong>nvcc</strong></p>
 <pre><code class="language-bash">nvcc -V
 </code></pre>
 <pre><code>nvcc: NVIDIA (R) Cuda compiler driver
@@ -381,7 +381,7 @@ Device 0: &quot;GeForce RTX 2070 SUPER&quot;
 deviceQuery, CUDA Driver = CUDART, CUDA Driver Version = 11.2, CUDA Runtime Version = 11.2, NumDevs = 1
 Result = PASS
 </code></pre>
-<h1 id="installation-numba">Installation Numba</h1>
+<h1 id="install-numba">Install Numba</h1>
 <ol>
 <li>install</li>
 </ol>
@@ -396,7 +396,6 @@ def cpu_print():
     print(&quot;print by cpu.&quot;)
 @cuda.jit
 def gpu_print():
-    # GPU核函数
     print(&quot;print by gpu.&quot;)
 
 def main():
@@ -407,7 +406,7 @@ def main():
 if __name__ == &quot;__main__&quot;:
     main()
 </code></pre>
-<h1 id="installation-tensorflow-gpu">Installation Tensorflow-gpu</h1>
+<h1 id="install-tensorflow-gpu">Install Tensorflow-gpu</h1>
 <ol>
 <li>install cudnn</li>
 </ol>
