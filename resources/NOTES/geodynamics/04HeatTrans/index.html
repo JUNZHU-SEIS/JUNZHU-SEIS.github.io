@@ -253,14 +253,14 @@
       
         <li class="md-nav__item">
   <a href="#fouriers-law-q-knabla-u" class="md-nav__link">
-    Fourier's Law: $q=-k\nabla u$
+    Fourier's Law: \(q=-k\nabla u\)
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#earths-heat-budget-q_mantleq_cmbq_secq_rad" class="md-nav__link">
-    Earth's heat budget: $Q_{mantle}=Q_{cmb}+Q_{sec}+Q_{rad}$
+    Earth's heat budget: \(Q_{mantle}=Q_{cmb}+Q_{sec}+Q_{rad}\)
   </a>
   
 </li>
@@ -300,33 +300,33 @@
 <li>cooling the Earth, heat transfer in 2 differet ways (conduction &amp; convection) </li>
 </ol>
 <p><img alt="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Temperature_schematic_of_inner_Earth.jpg/601px-Temperature_schematic_of_inner_Earth.jpg" /></p>
-<h2 id="fouriers-law-q-knabla-u">Fourier's Law: $q=-k\nabla u$</h2>
+<h2 id="fouriers-law-q-knabla-u">Fourier's Law: <span class="arithmatex">\(q=-k\nabla u\)</span></h2>
 <p>In order to know the heat flux from the Earth, rock's thermal conductivity &amp; temperature gradient near surface are needed</p>
-<h2 id="earths-heat-budget-q_mantleq_cmbq_secq_rad">Earth's heat budget: $Q_{mantle}=Q_{cmb}+Q_{sec}+Q_{rad}$</h2>
+<h2 id="earths-heat-budget-q_mantleq_cmbq_secq_rad">Earth's heat budget: <span class="arithmatex">\(Q_{mantle}=Q_{cmb}+Q_{sec}+Q_{rad}\)</span></h2>
 <ol>
-<li>internal heating ratio = $1 - \frac{Q_{cmb}}{Q_{mantle}}$</li>
+<li>internal heating ratio = <span class="arithmatex">\(1 - \frac{Q_{cmb}}{Q_{mantle}}\)</span></li>
 <li>heat generation by the decay of radioactive elements (U, Tl, K)</li>
 </ol>
 <h2 id="half-space-cooling-model">Half space cooling model</h2>
 <ol>
-<li>Equation: $\frac{\partial T}{\partial t}=\kappa \frac{\partial^2T}{\partial y^2}$</li>
+<li>Equation: <span class="arithmatex">\(\frac{\partial T}{\partial t}=\kappa \frac{\partial^2T}{\partial y^2}\)</span></li>
 <li>boundary condtitions:<br>
 $$T=T_1, t=0, y&gt;0 \
   T=T_0, y=0, t&gt;0 \
   T\to T_1, y\to \infty, t&gt;0 
 $$</li>
-<li>solution: $\frac{T-T_1}{T_0-T_1}=erfc(\frac{y}{2\sqrt{\kappa t}})$</li>
-<li>typically, we set $t=x/\mu$, where $x$ is the distance between the point to the mid-ocean ridge</li>
+<li>solution: <span class="arithmatex">\(\frac{T-T_1}{T_0-T_1}=erfc(\frac{y}{2\sqrt{\kappa t}})\)</span></li>
+<li>typically, we set <span class="arithmatex">\(t=x/\mu\)</span>, where <span class="arithmatex">\(x\)</span> is the distance between the point to the mid-ocean ridge</li>
 </ol>
 <h2 id="plate-cooling-model-of-the-lithosphere-considering-basal-heating-effects">plate cooling model of the lithosphere (considering basal heating effects)</h2>
 <ol>
-<li>Equation: $\frac{\partial T}{\partial t}=\kappa \frac{\partial^2T}{\partial y^2}$</li>
+<li>Equation: <span class="arithmatex">\(\frac{\partial T}{\partial t}=\kappa \frac{\partial^2T}{\partial y^2}\)</span></li>
 <li>boundary condtitions:<br>
 $T=T_1, t=0, y_{L_0}\geqslant y\geqslant 0 \
   T=T_0, y=0, t&gt;0 \
   T=T_1, y=y_{y_{L_0}}, t&gt;0 \
 $ 
-where $y_{L_0}$ is a prescribed plate thickness </li>
+where <span class="arithmatex">\(y_{L_0}\)</span> is a prescribed plate thickness </li>
 </ol>
                 
               
@@ -371,6 +371,12 @@ where $y_{L_0}$ is a prescribed plate thickness </li>
     
     
       <script src="../../../../assets/javascripts/bundle.4ea5477f.min.js"></script>
+      
+        <script src="../../../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
