@@ -14,7 +14,7 @@
     
     
       
-        <title>Geodynamics in 2021 spring, lectured by Prof. Leng - Jun ZHU</title>
+        <title>Gravity - Jun ZHU</title>
       
     
     
@@ -59,7 +59,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#geodynamics-in-2021-spring-lectured-by-prof-leng" class="md-skip">
+        <a href="#gravity" class="md-skip">
           Skip to content
         </a>
       
@@ -88,7 +88,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Geodynamics in 2021 spring, lectured by Prof. Leng
+              Gravity
             
           </span>
         </div>
@@ -245,91 +245,71 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#definition" class="md-nav__link">
-    definition
+  <a href="#surface-observables" class="md-nav__link">
+    Surface observables
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    overview
+  <a href="#terminology" class="md-nav__link">
+    Terminology:
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#deformation-of-rocks" class="md-nav__link">
-    deformation of rocks
-  </a>
-  
-    <nav class="md-nav" aria-label="deformation of rocks">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#elastic-yield-strength-relaxation-time" class="md-nav__link">
-    elastic: &lt; yield strength &amp; &lt;&lt; relaxation time
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ductile-yield-strength-relaxation-time" class="md-nav__link">
-    ductile: &gt; yield strength &amp; = relaxation time
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#brittle-yield-strength-relaxation-time" class="md-nav__link">
-    brittle: &gt; yield strength &amp; &lt; relaxation time
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#thermodynamics" class="md-nav__link">
-    thermodynamics
+  <a href="#gravity-anomalies-in-some-typical-tectonic-settings" class="md-nav__link">
+    gravity anomalies in some typical tectonic settings
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#forces" class="md-nav__link">
-    Forces
+  <a href="#equation-g_m-fracgmr2" class="md-nav__link">
+    equation: $g_m = \frac{GM}{r^2}$
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#methods" class="md-nav__link">
-    Methods
+  <a href="#geoid-surface-vs-reference-ellipsoid-vs-physical-earth" class="md-nav__link">
+    geoid surface vs. reference ellipsoid vs. physical Earth
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#numerical-modeling" class="md-nav__link">
-    Numerical modeling
+  <a href="#gravity-anomaly-category" class="md-nav__link">
+    gravity anomaly category
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#basic-si-unit-typical-constants" class="md-nav__link">
-    Basic SI unit &amp; typical constants
+  <a href="#workflow-of-gravity-data-processing" class="md-nav__link">
+    workflow of gravity data processing
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#a-picture-of-geodynamics-layer-cake-or-plum-pudding" class="md-nav__link">
-    A picture of Geodynamics (Layer cake or plum pudding ?)
+  <a href="#compensation-model" class="md-nav__link">
+    Compensation model:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#origin-of-the-long-wavelength-geoid-anomaly" class="md-nav__link">
+    origin of the long-wavelength geoid anomaly
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#origin-of-the-short-wavelength-gravity-anomaly" class="md-nav__link">
+    origin of the short-wavelength gravity anomaly
   </a>
   
 </li>
@@ -347,48 +327,85 @@
               
                 
                 
-                <h1 id="geodynamics-in-2021-spring-lectured-by-prof-leng">Geodynamics in 2021 spring, lectured by Prof. Leng</h1>
-<h2 id="definition">definition</h2>
-<p><strong>Geodynamics is a subfield of geophysics dealing with dynamics of the Earth.</strong>
-It applies physics, chemistry and mathematics to <strong>the understanding of how mantle convection leads to plate tectonics and geologic phenomena</strong> such as seafloor spreading, mountain building, volcanoes, earthquakes, faulting and so on.</p>
-<h2 id="overview">overview</h2>
-<p><strong>Geodynamics is generally concerned with processes that move materials throughout the Earth.</strong>
-In the Earth's interior, movement happens when rocks melt or deform and flow in response to a stress field.</p>
-<h2 id="deformation-of-rocks">deformation of rocks</h2>
-<h3 id="elastic-yield-strength-relaxation-time">elastic: &lt; yield strength &amp; &lt;&lt; relaxation time</h3>
-<p>The magnitude of the stress cannot exceed the <strong>yield strength</strong> of a material, and the <strong>time scale of the stress cannot approach the relaxation time of the material</strong>. If stress exceeds the yield strength of a material, bonds begin to break, which can lead to ductile or brittle deformation.</p>
-<h3 id="ductile-yield-strength-relaxation-time">ductile: &gt; yield strength &amp; = relaxation time</h3>
-<p>Ductile deformation happens <strong>when the temperature of a system is high enough</strong> so that a significant fraction of the material microstates are unbound.
-Examples include bending of the lithosphere under volcanic islands or sedimentary basins, and bending at oceanic trenches.</p>
-<h3 id="brittle-yield-strength-relaxation-time">brittle: &gt; yield strength &amp; &lt; relaxation time</h3>
-<p><strong>When strain localizes faster than these relaxation processes can redistribute it</strong>, brittle deformation occurs.</p>
-<h2 id="thermodynamics">thermodynamics</h2>
-<p><strong>The most important thermodynamic variables are temperature and pressure.</strong> Within the upper lithosphere, brittle deformation is common.
-After the brittle-ductile transition zone, ductile deformation becomes dominant.</p>
-<h2 id="forces">Forces</h2>
-<p>The main motive force behind stress in the Earth is provided by the energy from <strong>radioisotope decay, friction, and residual heat</strong>.
-Negative thermal buoyancy of the oceanic plates is the primary cause of subduction and plate tectonics, while positive thermal buoyancy may lead to mantle plumes, which could explain <strong>intraplate volcanism</strong>.</p>
-<h2 id="methods">Methods</h2>
-<p>Data includes <strong>field observations, geodesy, radiometric dating, petrology, mineralogy, drilling boreholes and remote sensing techniques</strong>.</p>
-<h2 id="numerical-modeling">Numerical modeling</h2>
-<p>Forward modeling to:</p>
+                <h1 id="gravity">Gravity</h1>
+<h2 id="surface-observables">Surface observables</h2>
+<p>curvature, heat, gravity and geoid, ...</p>
+<h2 id="terminology">Terminology:</h2>
 <ol>
-<li>reproduce a specific observation</li>
-<li>produce basic fluid dynamics</li>
+<li>gravity anomaly: the difference between the observed acceleration of an object in free fall on a planet's surface, and the corresponding value predicted from a model of the planet's gravitational field. (caused by the topography and density inhomogeneities, Notice that isostasy remove the anomaly of large-scale topography)</li>
+<li>gravity equipotential: a surface on which U (gravity potential) is a constant</li>
+<li>geoid: the shape of that the ocean surface would take under the influence of the gravity and rotation of Earth alone, if other influences such as winds and tides are absent. This surface is extended through the continents. It is a smooth but irregular surface whose shape results from the uneven distribution of mass within and on the surface of Earth. It can be known only through extensive gravitational measurements and calculations. The surface of the geoid is higher than the reference ellipsoid wherever there is a positive gravity anomaly and lower than the reference ellipsoid wherever there is a negative gravity anomaly.</li>
+<li>reference geoid: typically defined as a spheroid</li>
+<li>geoid anomaly: $U - U_{ref}$</li>
+<li>isostatic geoid anomaly: it reflects the dipole moment of the density distribution</li>
 </ol>
-<p>Basic fluid dynamics modelling can further be subdivided into <strong>instantaneous studies</strong>, which aim to reproduce the instantaneous flow in a system due to a given buoyancy distribution, and <strong>time-dependent studies</strong>, which either aim to reproduce a possible evolution of a given initial condition over time or a statistical (quasi) steady-state of a given system.</p>
-<h2 id="basic-si-unit-typical-constants">Basic SI unit &amp; typical constants</h2>
+<p><img alt="geoid" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Geoida.svg/1024px-Geoida.svg.png" />
+<img alt="geoid anomaly" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Gravity%2C_geoid_anomaly_synthetic_cases_with_local_isostasy_2.gif/1920px-Gravity%2C_geoid_anomaly_synthetic_cases_with_local_isostasy_2.gif" /></p>
+<h2 id="gravity-anomalies-in-some-typical-tectonic-settings">gravity anomalies in some typical tectonic settings</h2>
 <ol>
-<li>density: 3000 SI</li>
-<li>tectonic stress: 10 Mpa (1 pa = 1 N/m2; 1 Mpa = 1e6 pa)</li>
-<li>Young's Modulus for typical rocks: 70 Gpa</li>
-<li>magnitude for strain in the lithosphere: 1e-4</li>
-<li>Possion's ratio: 0.25</li>
-<li>heat flux: also termed "heat flux density", is a flow of energy per unit of area per unit of time. 65 +-1.6 mWm-2 for continent; 101 +- 2.2 mWm-1 for ocean</li>
-<li>thermal conductivity k: a measure of its ability to conduct heat. Wm-1K-1</li>
+<li>positive (mine); </li>
+<li>negative (petroleum);</li>
+<li>unconceivable (mantle convection involves both less dense material &amp; topographic bulge)</li>
 </ol>
-<h2 id="a-picture-of-geodynamics-layer-cake-or-plum-pudding">A picture of Geodynamics (Layer cake or plum pudding ?)</h2>
-<p><img alt="image" src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fngeo134/MediaObjects/41561_2008_Article_BFngeo134_Fig1_HTML.jpg?as=webp" /></p>
+<h2 id="equation-g_m-fracgmr2">equation: $g_m = \frac{GM}{r^2}$</h2>
+<p>the tangential component is negligible</p>
+<h2 id="geoid-surface-vs-reference-ellipsoid-vs-physical-earth">geoid surface vs. reference ellipsoid vs. physical Earth</h2>
+<table>
+<thead>
+<tr>
+<th align="left">geoid</th>
+<th align="center">reference</th>
+<th align="right">physical</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">irregular</td>
+<td align="center">smooth</td>
+<td align="right">most irregular</td>
+</tr>
+</tbody>
+</table>
+<h2 id="gravity-anomaly-category">gravity anomaly category</h2>
+<table>
+<thead>
+<tr>
+<th align="left">surface</th>
+<th align="center">Bouguer</th>
+<th align="right">test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">density anomalies</td>
+<td align="center">topographic</td>
+<td align="right">most irregular</td>
+</tr>
+</tbody>
+</table>
+<h2 id="workflow-of-gravity-data-processing">workflow of gravity data processing</h2>
+<ol>
+<li>get the data by CG-5</li>
+<li>remove the reference gravity field</li>
+<li>elevation (free-air) correction, you will get the free-air gravity anomaly</li>
+<li>topography correction, after that you will get the Bouguer anomaly (Bouguer &amp; free-air anomaly are the most frequently used gravity data)</li>
+</ol>
+<h2 id="compensation-model">Compensation model:</h2>
+<ol>
+<li>Airy compensation (by depleted mantle)<br>
+$$Th_{root}(\rho_{mantle}-\rho_{crust})=Th_{range}(\rho_{crust}-\rho_{air})$$
+$$Th_{intrudedmantle}(\rho_{mantle}-\rho_{crust})=Th_{water}(\rho_{crust}-\rho_{mantle})$$</li>
+</ol>
+<p><img alt="airy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Airy_Isostasy.jpg/330px-Airy_Isostasy.jpg" /></p>
+<ol>
+<li>Pratt compensation (by varied density)<br>
+$$\rho_0Th_0=\rho_-(Th_0+Th_{range}) $$
+$$\rho_0Th_0=\rho_+(Th_0-Th_{water})+\rho_{water}Th_{water} $$</li>
+</ol>
+<h2 id="origin-of-the-long-wavelength-geoid-anomaly">origin of the long-wavelength geoid anomaly</h2>
+<p>mantle convection</p>
+<h2 id="origin-of-the-short-wavelength-gravity-anomaly">origin of the short-wavelength gravity anomaly</h2>
+<p>mantle convection</p>
                 
               
               

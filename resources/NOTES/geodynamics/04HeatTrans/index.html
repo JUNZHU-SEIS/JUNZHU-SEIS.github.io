@@ -252,22 +252,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#heat-conduction-fouriers-law" class="md-nav__link">
-    heat conduction: Fourier's Law
+  <a href="#fouriers-law-q-knabla-u" class="md-nav__link">
+    Fourier's Law: $q=-k\nabla u$
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#earths-heat-budget" class="md-nav__link">
-    Earth's heat budget
+  <a href="#earths-heat-budget-q_mantleq_cmbq_secq_rad" class="md-nav__link">
+    Earth's heat budget: $Q_{mantle}=Q_{cmb}+Q_{sec}+Q_{rad}$
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    
+  <a href="#half-space-cooling-model" class="md-nav__link">
+    Half space cooling model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plate-cooling-model-of-the-lithosphere-considering-basal-heating-effects" class="md-nav__link">
+    plate cooling model of the lithosphere (considering basal heating effects)
   </a>
   
 </li>
@@ -293,14 +300,34 @@
 <li>cooling the Earth, heat transfer in 2 differet ways (conduction &amp; convection) </li>
 </ol>
 <p><img alt="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Temperature_schematic_of_inner_Earth.jpg/601px-Temperature_schematic_of_inner_Earth.jpg" /></p>
-<h2 id="heat-conduction-fouriers-law">heat conduction: Fourier's Law</h2>
+<h2 id="fouriers-law-q-knabla-u">Fourier's Law: $q=-k\nabla u$</h2>
 <p>In order to know the heat flux from the Earth, rock's thermal conductivity &amp; temperature gradient near surface are needed</p>
-<h2 id="earths-heat-budget">Earth's heat budget</h2>
+<h2 id="earths-heat-budget-q_mantleq_cmbq_secq_rad">Earth's heat budget: $Q_{mantle}=Q_{cmb}+Q_{sec}+Q_{rad}$</h2>
 <ol>
-<li>internal heating ratio = 1 - Qcmb/Qmantle</li>
-<li>heat generation by the decay of radioactive elements</li>
+<li>internal heating ratio = $1 - \frac{Q_{cmb}}{Q_{mantle}}$</li>
+<li>heat generation by the decay of radioactive elements (U, Tl, K)</li>
 </ol>
-<h2 id="_1"></h2>
+<h2 id="half-space-cooling-model">Half space cooling model</h2>
+<ol>
+<li>Equation: $\frac{\partial T}{\partial t}=\kappa \frac{\partial^2T}{\partial y^2}$</li>
+<li>boundary condtitions:<br>
+$$T=T_1, t=0, y&gt;0 \
+  T=T_0, y=0, t&gt;0 \
+  T\to T_1, y\to \infty, t&gt;0 
+$$</li>
+<li>solution: $\frac{T-T_1}{T_0-T_1}=erfc(\frac{y}{2\sqrt{\kappa t}})$</li>
+<li>typically, we set $t=x/\mu$, where $x$ is the distance between the point to the mid-ocean ridge</li>
+</ol>
+<h2 id="plate-cooling-model-of-the-lithosphere-considering-basal-heating-effects">plate cooling model of the lithosphere (considering basal heating effects)</h2>
+<ol>
+<li>Equation: $\frac{\partial T}{\partial t}=\kappa \frac{\partial^2T}{\partial y^2}$</li>
+<li>boundary condtitions:<br>
+$T=T_1, t=0, y_{L_0}\geqslant y\geqslant 0 \
+  T=T_0, y=0, t&gt;0 \
+  T=T_1, y=y_{y_{L_0}}, t&gt;0 \
+$ 
+where $y_{L_0}$ is a prescribed plate thickness </li>
+</ol>
                 
               
               
