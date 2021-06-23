@@ -251,6 +251,41 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1d-channel-flows" class="md-nav__link">
+    1D channel flows
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conservation-of-fluid-in-2d" class="md-nav__link">
+    conservation of fluid in 2D
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#angle-of-subduction" class="md-nav__link">
+    angle of subduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stokes-flow-problem" class="md-nav__link">
+    Stokes Flow Problem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thermal-convection" class="md-nav__link">
+    thermal convection
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -269,8 +304,47 @@
 \rho C_P(\frac{dT}{dt}+v\nabla T)=\nabla (k\nabla T)+H \]</div>
 <h2 id="terminology">Terminology</h2>
 <ol>
-<li>Rayleigh Number: a dimensionless number associated with buoyancy-driven flow for a fluid, also known as natural convection. It characterizes the fluid's flow regime: a value in a certain lower range denotes laminar flow; a value in a higher range, turbulent flow. <strong>Below a certain critical value, there is no fluid motion and heat transfer is by conduction rather than convection</strong>.</li>
-<li>stream function: defined for <strong>incompressible flows</strong> in two-dimensions-as well as in three dimensions with axisymmetry. <strong>The flow velocity components can be expressed as the derivatives of the scalar stream function</strong>.</li>
+<li><a href="https://en.wikipedia.org/wiki/Rayleigh_number">Rayleigh Number</a>: a dimensionless number associated with <strong>buoyancy-driven flow for a fluid</strong>. It characterizes the fluid's flow regime: a value in a certain <strong>lower range denotes laminar flow</strong>; a value in a higher range, turbulent flow. Below a certain critical value, there is <strong>no fluid motion and heat transfer is by conduction rather than convection</strong>.<br>
+It is also viewed as the <strong>ratio of buoyancy and viscosity forces</strong> multiplied by the <strong>ratio of momentum and thermal diffusivities</strong>.</li>
+<li>stream function: defined for <strong>incompressible flows</strong> in two dimensions as well as in three dimensions with axisymmetry. <strong>The flow velocity components can be expressed as the derivatives of the scalar stream function</strong>.</li>
+<li><strong>viscosity: determines the time scale for deformation: <span class="arithmatex">\(\tau = \mu \frac{\partial u}{\partial y}\)</span></strong></li>
+<li>Kinematic viscosity: reflects how momentum diffuses</li>
+<li>Prandtl number: ratio of the kinematic viscosity and thermal diffusivity. <span class="arithmatex">\(\nu=\frac{\eta}{\rho}\)</span>, <span class="arithmatex">\(D=\sqrt{\kappa t}\)</span>, get <span class="arithmatex">\(P_r=\frac{\nu}{\kappa}\)</span>, where the unit for <span class="arithmatex">\(\nu\)</span> and <span class="arithmatex">\(\kappa\)</span> is <span class="arithmatex">\(m^2/s\)</span></li>
+<li>Newtonian fluid (<span class="arithmatex">\(\dot{\epsilon}=A\sigma^1\)</span>) vs. non-Newtonian fluid (<span class="arithmatex">\(\dot{\epsilon}=A\sigma^n\)</span>)</li>
+</ol>
+<p><img alt="nowtonian fluid" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Rheology_of_time_independent_fluids.svg/956px-Rheology_of_time_independent_fluids.svg.png" /></p>
+<h2 id="1d-channel-flows">1D channel flows</h2>
+<ol>
+<li>driven by a pressure fradient and surface velocity</li>
+</ol>
+<h2 id="conservation-of-fluid-in-2d">conservation of fluid in 2D</h2>
+<ol>
+<li>
+<div class="arithmatex">\[\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}=0\]</div>
+</li>
+<li>
+<div class="arithmatex">\[0=-\frac{\partial p}{\partial x}+\mu(\frac{\partial^2u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2})\\ 0=-\frac{\partial p}{\partial y}+\rho g+\mu(\frac{\partial^2v}{\partial x^2}+\frac{\partial^2v}{\partial y^2}) \]</div>
+</li>
+<li>rewrite <span class="arithmatex">\(P=p-\rho gy\)</span> to the Stokes equations</li>
+<li>Define stream function: <span class="arithmatex">\(\psi\)</span> that 
+<span class="arithmatex">\(<span class="arithmatex">\(u=-\frac{\partial \psi}{\partial y}\\ v=\frac{\partial \psi}{\partial x}\)</span>\)</span></li>
+<li>get <span class="arithmatex">\(\nabla^4\psi=0\)</span></li>
+</ol>
+<h2 id="angle-of-subduction">angle of subduction</h2>
+<p>why does the lithosphere descend at an angle other than 90 deg ?<br>
+One possible explanation is that the gravitational torque balances flow-induced ligting pressure torqque (扭矩, due to a suction force). </p>
+<h2 id="stokes-flow-problem">Stokes Flow Problem</h2>
+<p>Estimate the stokes velocity:<br>
+1. for ascending spheres<br>
+<span class="arithmatex">\(<span class="arithmatex">\((\frac{u}{r}\eta) 4\pi r^2=(\frac{4}{3}\pi r^3) \Delta \rho g\)</span>\)</span></p>
+<h2 id="thermal-convection">thermal convection</h2>
+<ol>
+<li>the net rate of heat advection out of the element: <span class="arithmatex">\(\frac{\partial}{\partial x}(\rho cuT)+\frac{\partial}{\partial y}(\rho cvT)\)</span></li>
+<li>heat conduction: <span class="arithmatex">\(-k(\frac{\partial^2 T}{\partial x^2}+\frac{\partial^2 T}{\partial y^2})\)</span></li>
+<li>the change in the energy content: <span class="arithmatex">\(\frac{\partial}{\partial t}(\rho cT)\)</span></li>
+<li>energy balance, and treat <span class="arithmatex">\(\rho\)</span>, <span class="arithmatex">\(c\)</span> as constant, we get
+<span class="arithmatex">\(<span class="arithmatex">\(\dot{T}+v\nabla T=\kappa\nabla^2T\)</span>\)</span></li>
+<li>along with: <span class="arithmatex">\(\nabla v=0\)</span></li>
 </ol>
                 
               

@@ -252,15 +252,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fouriers-law-q-knabla-u" class="md-nav__link">
-    Fourier's Law: \(q=-k\nabla u\)
+  <a href="#fouriers-law" class="md-nav__link">
+    Fourier's Law:
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#earths-heat-budget-q_mantleq_cmbq_secq_rad" class="md-nav__link">
-    Earth's heat budget: \(Q_{mantle}=Q_{cmb}+Q_{sec}+Q_{rad}\)
+  <a href="#earths-heat-budget" class="md-nav__link">
+    Earth's heat budget:
   </a>
   
 </li>
@@ -273,8 +273,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#plate-cooling-model-of-the-lithosphere-considering-basal-heating-effects" class="md-nav__link">
-    plate cooling model of the lithosphere (considering basal heating effects)
+  <a href="#plate-cooling-model" class="md-nav__link">
+    plate cooling model
   </a>
   
 </li>
@@ -295,18 +295,17 @@
                 <h1 id="heat-transfer">Heat transfer</h1>
 <h2 id="the-formation-of-the-earths-core">the formation of the Earth's core</h2>
 <ol>
-<li>small and giant imapcts forming the magma ocean</li>
-<li>sinking of heavy metal materials </li>
+<li>small and giant <strong>impacts forming the magma ocean</strong></li>
+<li><strong>sinking of heavy metal materials</strong> </li>
 <li>cooling the Earth, heat transfer in 2 differet ways (conduction &amp; convection) </li>
 </ol>
 <p><img alt="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Temperature_schematic_of_inner_Earth.jpg/601px-Temperature_schematic_of_inner_Earth.jpg" /></p>
-<h2 id="fouriers-law-q-knabla-u">Fourier's Law: <span class="arithmatex">\(q=-k\nabla u\)</span></h2>
-<p>In order to know the heat flux from the Earth, rock's thermal conductivity &amp; temperature gradient near surface are needed</p>
-<h2 id="earths-heat-budget-q_mantleq_cmbq_secq_rad">Earth's heat budget: <span class="arithmatex">\(Q_{mantle}=Q_{cmb}+Q_{sec}+Q_{rad}\)</span></h2>
-<ol>
-<li>internal heating ratio = <span class="arithmatex">\(1 - \frac{Q_{cmb}}{Q_{mantle}}\)</span></li>
-<li>heat generation by the decay of radioactive elements (U, Tl, K)</li>
-</ol>
+<h2 id="fouriers-law">Fourier's Law:</h2>
+<p><span class="arithmatex">\(q=-k\nabla T\)</span>. In order to know the heat flux from the Earth, rock's thermal conductivity <span class="arithmatex">\(k\)</span> &amp; temperature gradient <span class="arithmatex">\(\nabla T\)</span> near surface are needed</p>
+<h2 id="earths-heat-budget">Earth's heat budget:</h2>
+<p><span class="arithmatex">\(Q_{mantle}=Q_{cmb}+Q_{sec}+Q_{rad}\)</span>
+1. internal heating ratio = <span class="arithmatex">\(1 - \frac{Q_{cmb}}{Q_{mantle}}\)</span>
+2. heat generation by the decay of radioactive elements (U, Tl, K)</p>
 <h2 id="half-space-cooling-model">Half space cooling model</h2>
 <ol>
 <li>Equation: <span class="arithmatex">\(\frac{\partial T}{\partial t}=\kappa \frac{\partial^2T}{\partial y^2}\)</span></li>
@@ -318,15 +317,15 @@ $$</li>
 <li>solution: <span class="arithmatex">\(\frac{T-T_1}{T_0-T_1}=erfc(\frac{y}{2\sqrt{\kappa t}})\)</span></li>
 <li>typically, we set <span class="arithmatex">\(t=x/\mu\)</span>, where <span class="arithmatex">\(x\)</span> is the distance between the point to the mid-ocean ridge</li>
 </ol>
-<h2 id="plate-cooling-model-of-the-lithosphere-considering-basal-heating-effects">plate cooling model of the lithosphere (considering basal heating effects)</h2>
+<h2 id="plate-cooling-model">plate cooling model</h2>
 <ol>
 <li>Equation: <span class="arithmatex">\(\frac{\partial T}{\partial t}=\kappa \frac{\partial^2T}{\partial y^2}\)</span></li>
+<li>define <span class="arithmatex">\(y_{L_0}\)</span>, the plate thickness </li>
 <li>boundary condtitions:<br>
-$T=T_1, t=0, y_{L_0}\geqslant y\geqslant 0 \
+$$T=T_1, t=0, y_{L_0}\geqslant y\geqslant 0 \
   T=T_0, y=0, t&gt;0 \
   T=T_1, y=y_{y_{L_0}}, t&gt;0 \
-$ 
-where <span class="arithmatex">\(y_{L_0}\)</span> is a prescribed plate thickness </li>
+$$ </li>
 </ol>
                 
               

@@ -266,8 +266,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#equation-g_m-fracgmr2" class="md-nav__link">
-    equation: \(g_m = \frac{GM}{r^2}\)
+  <a href="#equation" class="md-nav__link">
+    Equation:
   </a>
   
 </li>
@@ -332,10 +332,10 @@
 <p>curvature, heat, gravity and geoid, ...</p>
 <h2 id="terminology">Terminology:</h2>
 <ol>
-<li>gravity anomaly: the difference between the observed acceleration of an object in free fall on a planet's surface, and the corresponding value predicted from a model of the planet's gravitational field. (caused by the topography and density inhomogeneities, Notice that isostasy remove the anomaly of large-scale topography)</li>
-<li>gravity equipotential: a surface on which U (gravity potential) is a constant</li>
-<li>geoid: the shape of that the ocean surface would take under the influence of the gravity and rotation of Earth alone, if other influences such as winds and tides are absent. This surface is extended through the continents. It is a smooth but irregular surface whose shape results from the uneven distribution of mass within and on the surface of Earth. It can be known only through extensive gravitational measurements and calculations. The surface of the geoid is higher than the reference ellipsoid wherever there is a positive gravity anomaly and lower than the reference ellipsoid wherever there is a negative gravity anomaly.</li>
-<li>reference geoid: typically defined as a spheroid</li>
+<li>gravity anomaly: <strong>the difference between the observed acceleration of an object in free fall on a planet's surface, and the corresponding value predicted from a model of the planet's gravitational field</strong>. (Caused by the <strong>topography and density inhomogeneities</strong>. Notice that <strong>isostasy remove the anomaly of large-scale topography</strong>)</li>
+<li>gravity equipotential: a surface on which the gravity potential <span class="arithmatex">\(U\)</span> is a constant</li>
+<li>geoid: <strong>the shape of that the ocean surface would take under the influence of the gravity and rotation of Earth alone</strong>, if other influences such as winds and tides are absent. <strong>This surface is extended through the continents</strong>. <strong>It is a smooth but irregular surface whose shape results from the uneven distribution of mass within and on the surface of Earth</strong>. <strong>The surface of the geoid is higher than the reference ellipsoid wherever there is a positive gravity anomaly and lower than the reference ellipsoid wherever there is a negative gravity anomaly</strong>.</li>
+<li>reference spheroid: typically defined as a spheroid</li>
 <li>geoid anomaly: <span class="arithmatex">\(U - U_{ref}\)</span></li>
 <li>isostatic geoid anomaly: it reflects the dipole moment of the density distribution</li>
 </ol>
@@ -345,10 +345,10 @@
 <ol>
 <li>positive (mine); </li>
 <li>negative (petroleum);</li>
-<li>unconceivable (mantle convection involves both less dense material &amp; topographic bulge)</li>
+<li>unconceivable (mantle convection involves both less dense material due to hotter lava &amp; topographic <strong>bulge</strong>)</li>
 </ol>
-<h2 id="equation-g_m-fracgmr2">equation: <span class="arithmatex">\(g_m = \frac{GM}{r^2}\)</span></h2>
-<p>the tangential component is negligible</p>
+<h2 id="equation">Equation:</h2>
+<p><span class="arithmatex">\(g_m = \frac{GM}{r^2}\)</span></p>
 <h2 id="geoid-surface-vs-reference-ellipsoid-vs-physical-earth">geoid surface vs. reference ellipsoid vs. physical Earth</h2>
 <table>
 <thead>
@@ -372,14 +372,12 @@
 <tr>
 <th align="left">surface</th>
 <th align="center">Bouguer</th>
-<th align="right">test</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="left">density anomalies</td>
 <td align="center">topographic</td>
-<td align="right">most irregular</td>
 </tr>
 </tbody>
 </table>
@@ -387,14 +385,14 @@
 <ol>
 <li>get the data by CG-5</li>
 <li>remove the reference gravity field</li>
-<li>elevation (free-air) correction, you will get the free-air gravity anomaly</li>
-<li>topography correction, after that you will get the Bouguer anomaly (Bouguer &amp; free-air anomaly are the most frequently used gravity data)</li>
+<li><strong>elevation (free-air) correction, you will get the free-air gravity anomaly</strong></li>
+<li><strong>topography correction, after that you will get the Bouguer anomaly (Bouguer &amp; free-air anomaly are the most frequently used gravity data)</strong></li>
 </ol>
 <h2 id="compensation-model">Compensation model:</h2>
 <ol>
 <li>Airy compensation (by depleted mantle)<br>
 <span class="arithmatex">\(<span class="arithmatex">\(Th_{root}(\rho_{mantle}-\rho_{crust})=Th_{range}(\rho_{crust}-\rho_{air})\)</span>\)</span>
-<span class="arithmatex">\(<span class="arithmatex">\(Th_{intrudedmantle}(\rho_{mantle}-\rho_{crust})=Th_{water}(\rho_{crust}-\rho_{mantle})\)</span>\)</span></li>
+<span class="arithmatex">\(<span class="arithmatex">\(Th_{intrudedmantle}(\rho_{mantle}-\rho_{crust})=Th_{water}(\rho_{crust}-\rho_{water})\)</span>\)</span></li>
 </ol>
 <p><img alt="airy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Airy_Isostasy.jpg/330px-Airy_Isostasy.jpg" /></p>
 <ol>
