@@ -14,7 +14,7 @@
     
     
       
-        <title>List available VGA - Jun ZHU</title>
+        <title>CudaInstallation - Jun ZHU</title>
       
     
     
@@ -88,7 +88,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              List available VGA
+              CudaInstallation
             
           </span>
         </div>
@@ -257,7 +257,9 @@
               
                 
                 
-                <h1 id="list-available-vga">List available VGA</h1>
+                <p align="right">Updated Date: JUN 23, 2021</p>
+
+<h1 id="list-available-vga">List available VGA</h1>
 <pre><code class="language-bash">lspci | grep VGA
 </code></pre>
 <pre><code>01:00.0 VGA compatible controller: NVIDIA Corporation TU104 [GeForce RTX 2070 SUPER] (rev a1)
@@ -319,22 +321,19 @@ driver   : xserver-xorg-video-nouveau - distro free builtin
 |    0   N/A  N/A      3376      G   ...AAAAAAAAA= --shared-files       28MiB |
 +-----------------------------------------------------------------------------+
 </code></pre>
-<h1 id="conflicting-installation">Conflicting installation</h1>
-<pre><code class="language-bash">sudo /usr/local/cuda-X.Y/bin/uninstall_cuda_X.Y.pl
-</code></pre>
 <h1 id="runfile-installation">Runfile installation</h1>
 <ol>
-<li>download <a href="https://developer.nvidia.com/cuda-11.2.0-download-archive?target_os=Linux&amp;target_arch=x86_64&amp;target_distro=Ubuntu&amp;target_version=2004&amp;target_type=runfilelocal">CUDA Version: 11.2</a></li>
+<li>download <a href="https://developer.nvidia.com/cuda-11.2.0-download-archive?target_os=Linux&amp;target_arch=x86_64&amp;target_distro=Ubuntu&amp;target_version=2004&amp;target_type=runfilelocal">CUDA (Version=11.2)</a></li>
 </ol>
 <pre><code class="language-bash">wget https://developer.download.nvidia.com/compute/cuda/11.2.0/local_installers/cuda_11.2.0_460.27.04_linux.run
 </code></pre>
 <ol>
-<li>install</li>
+<li>install it by run the following command</li>
 </ol>
 <pre><code>sudo sh cuda_11.2.0_460.27.04_linux.run
 </code></pre>
 <ol>
-<li>follow the details on <a href="https://docs.nvidia.com/cuda/archive/11.2.0/cuda-installation-guide-linux/index.html">CUDA11.2.0 DOCUMENT</a> and <a href="https://zhuanlan.zhihu.com/p/122286055">zhihu blog</a></li>
+<li>If any, just follow the instructions given by <a href="https://docs.nvidia.com/cuda/archive/11.2.0/cuda-installation-guide-linux/index.html">CUDA11.2.0 DOCUMENT</a> and <a href="https://zhuanlan.zhihu.com/p/122286055">Zhihu blog (中文)</a></li>
 </ol>
 <h1 id="test-installation-optional">Test installation (optional)</h1>
 <p><strong>nvcc</strong></p>
@@ -346,7 +345,7 @@ Built on Mon_Nov_30_19:08:53_PST_2020
 Cuda compilation tools, release 11.2, V11.2.67
 Build cuda_11.2.r11.2/compiler.29373293_0
 </code></pre>
-<p><strong>sample</strong></p>
+<p><strong>the dirctory: ./sample/</strong></p>
 <pre><code class="language-bash">cd ~/NVIDIA_CUDA-11.2_Samples/; make; cd 1_Utilities/deviceQuery/; ./deviceQuery
 </code></pre>
 <pre><code>./deviceQuery Starting...
@@ -396,15 +395,15 @@ Device 0: &quot;GeForce RTX 2070 SUPER&quot;
 deviceQuery, CUDA Driver = CUDART, CUDA Driver Version = 11.2, CUDA Runtime Version = 11.2, NumDevs = 1
 Result = PASS
 </code></pre>
-<h1 id="install-numba">Install Numba</h1>
+<h1 id="test-numba">test Numba</h1>
 <ol>
-<li>install</li>
+<li>install numba &amp; cudatoolkit using conda</li>
 </ol>
 <pre><code class="language-bash">conda install cudatoolkit
 conda install numba
 </code></pre>
 <ol>
-<li>test installation (run code <strong>test.py</strong>)</li>
+<li>test Numba</li>
 </ol>
 <pre><code class="language-python">from numba import cuda
 def cpu_print():
@@ -421,15 +420,8 @@ def main():
 if __name__ == &quot;__main__&quot;:
     main()
 </code></pre>
-<h1 id="install-tensorflow-gpu">Install Tensorflow-gpu</h1>
-<ol>
-<li>install cudnn</li>
-</ol>
-<pre><code class="language-bash">conda install cudnn
-</code></pre>
-<ol>
-<li>install tensorflow-gpu</li>
-</ol>
+<h1 id="test-tensorflow-gpu-optional">test Tensorflow-gpu (optional)</h1>
+<p>to be updated ...</p>
                 
               
               
