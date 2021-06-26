@@ -252,15 +252,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#keras" class="md-nav__link">
-    Keras
+  <a href="#tensorflow" class="md-nav__link">
+    Tensorflow
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#tensorflow" class="md-nav__link">
-    Tensorflow
+  <a href="#fit-and-fit_generator-in-keras" class="md-nav__link">
+    fit() and fit_generator() in Keras
   </a>
   
 </li>
@@ -283,9 +283,6 @@
 <h1 id="how-to-load-big-data-4-gb-in-machine-learning">How to load big data (&gt; 4 Gb) in Machine Learning ?</h1>
 <h2 id="why-do-not-use-pickle-or-numpy-for-big-data-size">Why DO NOT use pickle or numpy for big data size ?</h2>
 <p>See <a href="https://ai-how.github.io/2018-05-27-Input-pipeline-for-deep-learning-experiments/">here</a></p>
-<h2 id="keras">Keras</h2>
-<p>For any deep learning experiment the training involves updating the model weights by estimating the gradients of loss function. To quickly iterate through the data requires how fast the mini-batches can be fetched and run on GPU for loss and gradient computation. Numpy offers the functionality to read the data from disk without loading into RAM (a great relief !! as it frees the space for other processing).<br></p>
-<p><em>Note: Avoid loading the data into RAM and read data from disk on an iteration basis. However when using this iterator with Keras .fit_generator queues the mini-batches for seamless training without requiring an optimizer to wait for next batch</em></p>
 <h2 id="tensorflow">Tensorflow</h2>
 <p><img alt="queue" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Data_Queue.svg/1024px-Data_Queue.svg.png" />
 <img alt="tf.FIFOQueue" src="https://www.tensorflow.org/images/IncremeterFifoQueue.gif" /></p>
@@ -382,12 +379,21 @@ tf.queue.RandomShuffleQueue(capacity, min_after_dequeue, dtypes)
 tf.queue.PaddingFIFOQueue(capacity, dtypes, shapes)
 tf.queue.PriorityQueue(capacity, dtypes)
 </code></pre>
+<h2 id="fit-and-fit_generator-in-keras">fit() and fit_generator() in Keras</h2>
+<p>For any deep learning experiment the training involves updating the model weights by estimating the gradients of loss function. To quickly iterate through the data requires how fast the mini-batches can be fetched and run on GPU for loss and gradient computation. Numpy offers the functionality to read the data from disk without loading into RAM (a scikit-learn way).<br></p>
+<p><em>Note: Avoid loading the data into RAM and read data from disk on an iteration basis. However when using this iterator with Keras .fit_generator queues the mini-batches for seamless training without requiring an optimizer to wait for next batch</em></p>
+<p><strong>fit() is much similar to sklearn's fit method, where you pass array of features as x values and target as y values. You pass your whole dataset at once in fit method. Also, use it if you can load whole data into your memory (small dataset)</strong>.</p>
+<p><strong>In fit_generator(), you don't pass the x and y directly, instead they come from a generator. As it is written in keras documentation, generator is used when you want to avoid duplicate data when using multiprocessing. This is for practical purpose, when you have large dataset</strong>.
+<img alt="comparison" src="https://miro.medium.com/max/2400/1*_lQtIO-FvsPcyq3n2HyyCg.png" /></p>
 <p>Reference:<br></p>
 <ol>
 <li><a href="https://ai-how.github.io/2018-05-27-Input-pipeline-for-deep-learning-experiments/">Input pipeline for deep learning experiments in Keras, Tensorflow and Pytorch</a></li>
 <li><a href="https://xlinux.nist.gov/dads/HTML/queue.html">what is queue ?</a></li>
 <li><a href="https://www.tensorflow.org/api_docs/python/tf/queue/QueueBase">QueueBase in tensorflow</a></li>
 <li><a href="https://www.tensorflow.org/api_docs/python/tf/queue/FIFOQueue">FIFOQueue in tensorflow</a></li>
+<li><a href="https://blog.fnp.dev/keras-a-thing-you-should-know-about-keras-if-you-plan-to-train-a-deep-learning-model-on-a-large-fdd63ce66bd2">A thing you should know about Keras if you plan to train a deep learning model on a large dataset</a></li>
+<li><a href="https://blog.csdn.net/qq_32951799/article/details/82918098">csdn: fit_generator用法</a></li>
+<li><a href="https://www.cnblogs.com/wj-1314/p/8490822.html">generator 用法</a></li>
 </ol>
                 
               
