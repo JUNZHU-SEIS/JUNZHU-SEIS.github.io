@@ -212,6 +212,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../blog/" class="md-nav__link">
+        Blog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../history/updatehistory/" class="md-nav__link">
         Update History
       </a>
@@ -265,6 +280,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    Reference:
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -306,6 +328,7 @@ class ThreadRunner(object):
                                            min_after_dequeue=1000)
         # filling queue using enqueue_many operations
         self.enqueue_op = self.queue.enqueue_many([self.feat,self.labels,self.name])
+        # capacity: An integer. The upper bound on the number of elements that may be stored in this queue.
     def get_inputs(self):
         &quot;&quot;&quot;
         Return's tensors containing a batch of feature sets and labels of size 32
@@ -322,8 +345,7 @@ class ThreadRunner(object):
         &quot;&quot;&quot; Start background threads to feed queue &quot;&quot;&quot;
         threads = []
         for n in range(n_threads):
-            #print &quot;thread started :&quot;, n
-            sys.stdout.flush()
+            sys.stdout.flush()#force to print buffer &quot;thread started :&quot;, n
             t = threading.Thread(target=self.thread_main, args=(sess,))
             t.daemon = True # thread will close when parent quits
             t.start()
@@ -385,7 +407,7 @@ tf.queue.PriorityQueue(capacity, dtypes)
 <p><strong>fit() is much similar to sklearn's fit method, where you pass array of features as x values and target as y values. You pass your whole dataset at once in fit method. Also, use it if you can load whole data into your memory (small dataset)</strong>.</p>
 <p><strong>In fit_generator(), you don't pass the x and y directly, instead they come from a generator. As it is written in keras documentation, generator is used when you want to avoid duplicate data when using multiprocessing. This is for practical purpose, when you have large dataset</strong>.
 <img alt="comparison" src="https://miro.medium.com/max/2400/1*_lQtIO-FvsPcyq3n2HyyCg.png" /></p>
-<p>Reference:<br></p>
+<h2 id="reference">Reference:<br></h2>
 <ol>
 <li><a href="https://ai-how.github.io/2018-05-27-Input-pipeline-for-deep-learning-experiments/">Input pipeline for deep learning experiments in Keras, Tensorflow and Pytorch</a></li>
 <li><a href="https://xlinux.nist.gov/dads/HTML/queue.html">what is queue ?</a></li>

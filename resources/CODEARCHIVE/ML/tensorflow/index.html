@@ -14,7 +14,7 @@
     
     
       
-        <title>04BSE - Jun ZHU</title>
+        <title>Tensorflow - Jun ZHU</title>
       
     
     
@@ -59,7 +59,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#terminology" class="md-skip">
+        <a href="#tensorflow" class="md-skip">
           Skip to content
         </a>
       
@@ -88,7 +88,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              04BSE
+              Tensorflow
             
           </span>
         </div>
@@ -259,6 +259,34 @@
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flexibility" class="md-nav__link">
+    Flexibility
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session" class="md-nav__link">
+    Session
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -272,35 +300,45 @@
               
                 
                 
-                <p align="right">Updated Date: JUN 23, 2021</p>
+                <p align="right">Updated Date: JUN 26, 2021</p>
 
-<h1 id="terminology">terminology:</h1>
+<h1 id="tensorflow">Tensorflow</h1>
+<p>TensorFlow is simply referring to the flow of the Tensors in the computational graph.</p>
+<h2 id="overview">Overview<br></h2>
 <ol>
-<li>BSE (bulk silicate Earth): Earth accreted from chondrites. Chemical elements classified as lithophile, siderophile, or volatile. Siderophile elements are partitioned into the core; Lithophile elements are partitioned into the silicate shell (<strong>depleted mantle &amp; primitive mantle &amp; oceanic crust &amp; continental crust</strong>); Volatile elements lost to space or to atmosphere-ocean.</li>
-<li>depleted mantle: the part of Earth’s mantle from which <strong>basaltic melt has been extracted</strong> in one or multiple melting events at, for example, <strong>mid-ocean ridges, hot spots, or island arcs</strong>. Elements that do not fit into the crystal lattice of mantle minerals, the so-called <strong>incompatible elements</strong>, are preferentially incorporated into the melt and thus removed from the mantle, <strong>leaving the latter depleted with respect to these elements</strong>.</li>
-<li>primitive (primary) mantle: in geochemistry, a hypothetical reservoir with the composition of the Earth's crust and mantle taken together. (hypothetical undifferentiated mantle during the Earth's accretionary phase)</li>
-<li>meterorotite: ... to be updated</li>
+<li>build the Graph, it represents the data flow of the computers</li>
+<li>run the session, it executes the operations in the Graph</li>
 </ol>
-<p><img alt="crust" src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Continental_and_oceanic_crust.png" /></p>
-<h1 id="description">description</h1>
+<h2 id="flexibility">Flexibility<br></h2>
+<p>When you create a graph, you are not bound to run the whole graph and can control the parts of the graph that are executed separately. This provides a huge flexibility with your models.</p>
+<h2 id="session">Session<br></h2>
+<p>To compute anything, a graph must be launched in a session. Technically, session places the graph ops (operations) on hardware such as CPUs or GPUs and provides methods to execute them.</p>
+<pre><code class="language-python">sess = tf.Session()
+print(sess.run(c))
+sess.close()
+</code></pre>
+<p>Or you can use <em>with tf.Session() as sess </em>, instead<br></p>
+<pre><code class="language-python">with tf.Session() as sess:
+  print(sess.run(c))
+</code></pre>
+<p>The difference between <strong>Python-name</strong> and <strong>TensorFlow-name.</strong><br>
+Can be substituted with tf.constant() for creating the input variables as Tensors instead of simply using Python variables.<br></p>
+<p><strong>A More complicated example</strong></p>
+<pre><code class="language-python">import tensorflow as tf
+x = 2
+y = 3
+add_op = tf.add(x, y, name='Add')
+mul_op = tf.multiply(x, y, name='Multiply')
+pow_op = tf.pow(add_op, mul_op, name='Power')
+useless_op = tf.multiply(x, add_op, name='Useless')
+
+with tf.Session() as sess:
+  pow_out, useless_out = sess.run([pow_op, useless_op])
+</code></pre>
+<p><img alt="graph" src="https://www.easy-tensorflow.com/files/1_5.png" /></p>
+<h2 id="reference">Reference<br></h2>
 <ol>
-<li>timeline of the BSE:<br>
-Bulk Earth (begining); oceans &amp; atmosphere &amp; BSE &amp; core (first 30 Ma); oceans &amp; atmospheres &amp; continental and oceanic crust &amp; depleted mantle &amp; primitive mantle &amp; core (today)<br>
-<em>upper mantle</em>: depleted; <em>lower mantle</em>: undifferentiated</li>
-<li>H/C diagram:<br>
-... to be updated</li>
-<li>origin of the Earth's material: <br>
-sun &amp; meterorite &amp; comet &amp; interplanetary &amp; dust &amp; particles &amp; other planets</li>
-<li>PM = UM + CC = MORB + DUM + CC<br>
-<em>PM: primitive mantle; UM: upper mantle; CC: continental crust; DUM: depleted upper mantle; MORB: mid-ocean ridge basalt</em></li>
-<li>pyrolite model: 3 parts peridotite plus 1 part basalt</li>
-<li>composition of pyrolite: olivine; orthopyroxene (斜方辉石); clinopyroxene (斜辉石)</li>
-<li>capacity of the incompatible elements: continents &gt; OIB &gt; island arcs &gt; MORB</li>
-</ol>
-<h1 id="how">how</h1>
-<ol>
-<li>how to determine the compositions of the BSE ?<br>
-... to be updated</li>
+<li><a href="https://www.easy-tensorflow.com/tf-tutorials/basics/graph-and-session">easy tensorflow</a></li>
 </ol>
                 
               
