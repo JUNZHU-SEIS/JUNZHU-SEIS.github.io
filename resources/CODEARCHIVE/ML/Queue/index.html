@@ -14,7 +14,7 @@
     
     
       
-        <title>LoadBigData - Jun ZHU</title>
+        <title>Queue - Jun ZHU</title>
       
     
     
@@ -59,7 +59,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-load-big-data-4-gb-in-machine-learning" class="md-skip">
+        <a href="#how-to-load-big-data-4-gb-in-deep-learning" class="md-skip">
           Skip to content
         </a>
       
@@ -88,7 +88,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              LoadBigData
+              Queue
             
           </span>
         </div>
@@ -300,15 +300,24 @@
               
                 
                 
-                <p align="right">Updated Date: JUN 26, 2021</p>
+                <p align="right">Updated Date: JUN 28, 2021</p>
 
-<h1 id="how-to-load-big-data-4-gb-in-machine-learning">How to load big data (&gt; 4 Gb) in Machine Learning ?</h1>
+<h1 id="how-to-load-big-data-4-gb-in-deep-learning">How to load big data (&gt; 4 Gb) in Deep Learning ?</h1>
 <h2 id="why-do-not-use-pickle-or-numpy-for-big-data-size">Why DO NOT use pickle or numpy for big data size ?</h2>
-<p>See <a href="https://ai-how.github.io/2018-05-27-Input-pipeline-for-deep-learning-experiments/">here</a></p>
+<p>Please See <a href="https://ai-how.github.io/2018-05-27-Input-pipeline-for-deep-learning-experiments/">here</a></p>
 <h2 id="tensorflow">Tensorflow</h2>
-<p><img alt="queue" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Data_Queue.svg/1024px-Data_Queue.svg.png" />
-<img alt="tf.FIFOQueue" src="https://www.tensorflow.org/images/IncremeterFifoQueue.gif" /></p>
-<pre><code class="language-python">##=======================================================##
+<p><img alt="queue illustration" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Data_Queue.svg/1024px-Data_Queue.svg.png" />
+<strong>What is data pipeline</strong> ?<br>
+A pipeline is a series of algorithms chained, composed, and scrambled together in some ways to process a stream of data, it has inputs and it yields outputs.<br>
+<strong>The purpose of data pipelines:</strong><br>
+A lot of data preprocessing needs to be done to create input data for the ML algorithm or to load data into GPU for training. Similarly, the output is just some number in softwarem which will need to be processed to perform some action in the real world.<br>
+<strong>The "ETL" principle for data pipelines</strong><br>
+1. Extract
+2. transform
+3. load: load our dataset into the appropriate device such as a GPU or TPU.</p>
+<pre><code>![tf.FIFOQueue](https://www.tensorflow.org/images/IncremeterFifoQueue.gif)
+```python
+##=======================================================##
 ##  data loader reads data from disk ====================##
 ## fills the queue and yields mini-batch of desried size=##
 ##=======================================================##
@@ -416,6 +425,7 @@ tf.queue.PriorityQueue(capacity, dtypes)
 <li><a href="https://blog.fnp.dev/keras-a-thing-you-should-know-about-keras-if-you-plan-to-train-a-deep-learning-model-on-a-large-fdd63ce66bd2">A thing you should know about Keras if you plan to train a deep learning model on a large dataset</a></li>
 <li><a href="https://blog.csdn.net/qq_32951799/article/details/82918098">csdn: fit_generator用法</a></li>
 <li><a href="https://www.cnblogs.com/wj-1314/p/8490822.html">generator 用法</a></li>
+<li>A beginner's guide to data pipelines in Tensorflow 2.0</li>
 </ol>
                 
               
