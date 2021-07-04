@@ -14,7 +14,7 @@
     
     
       
-        <title>Queue - Jun ZHU</title>
+        <title>LoadBigData - Jun ZHU</title>
       
     
     
@@ -88,7 +88,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Queue
+              LoadBigData
             
           </span>
         </div>
@@ -281,6 +281,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-to-write-a-generator-for-keras" class="md-nav__link">
+    How to write a generator for Keras ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reference" class="md-nav__link">
     Reference:
   </a>
@@ -416,6 +423,96 @@ tf.queue.PriorityQueue(capacity, dtypes)
 <p><strong>fit() is much similar to sklearn's fit method, where you pass array of features as x values and target as y values. You pass your whole dataset at once in fit method. Also, use it if you can load whole data into your memory (small dataset)</strong>.</p>
 <p><strong>In fit_generator(), you don't pass the x and y directly, instead they come from a generator. As it is written in keras documentation, generator is used when you want to avoid duplicate data when using multiprocessing. This is for practical purpose, when you have large dataset</strong>.
 <img alt="comparison" src="https://miro.medium.com/max/2400/1*_lQtIO-FvsPcyq3n2HyyCg.png" /></p>
+<h2 id="how-to-write-a-generator-for-keras">How to write a generator for Keras ?</h2>
+<pre><code class="language-python">'keras script'
+import numpy as np
+
+from keras.models import Sequential
+from my_classes import DataGenerator
+
+# Parameters
+params = {'dim': (32,32,32),
+          'batch_size': 64,
+          'n_classes': 6,
+          'n_channels': 1,
+          'shuffle': True}
+
+# Datasets
+partition = # IDs
+labels = # Labels
+
+# Generators
+training_generator = DataGenerator(partition['train'], labels, **params)
+validation_generator = DataGenerator(partition['validation'], labels, **params)
+
+# Design model
+model = Sequential()
+[...] # Architecture
+model.compile()
+
+# Train model on dataset
+model.fit_generator(generator=training_generator,
+                    validation_data=validation_generator,
+                    use_multiprocessing=True,
+                    workers=6)
+</code></pre>
+<pre><code class="language-python">'a data generator for keras'
+import numpy as np
+import keras
+
+class DataGenerator(keras.utils.Sequence):
+    'Generates data for Keras'
+    def __init__(self, list_IDs, labels, batch_size=32, dim=(32,32,32), n_channels=1,
+                 n_classes=10, shuffle=True):
+        'Initialization'
+        self.dim = dim
+        self.batch_size = batch_size
+        self.labels = labels
+        self.list_IDs = list_IDs
+        self.n_channels = n_channels
+        self.n_classes = n_classes
+        self.shuffle = shuffle
+        self.on_epoch_end()
+
+    def __len__(self):
+        'Denotes the number of batches per epoch'
+        return int(np.floor(len(self.list_IDs) / self.batch_size))
+
+    def __getitem__(self, index):
+        'Generate one batch of data'
+        # Generate indexes of the batch
+        indexes = self.indexes[index*self.batch_size:(index+1)*self.batch_size]
+
+        # Find list of IDs
+        list_IDs_temp = [self.list_IDs[k] for k in indexes]
+
+        # Generate data
+        X, y = self.__data_generation(list_IDs_temp)
+
+        return X, y
+
+    def on_epoch_end(self):
+        'Updates indexes after each epoch'
+        self.indexes = np.arange(len(self.list_IDs))
+        if self.shuffle == True:
+            np.random.shuffle(self.indexes)
+
+    def __data_generation(self, list_IDs_temp):
+        'Generates data containing batch_size samples' # X : (n_samples, *dim, n_channels)
+        # Initialization
+        X = np.empty((self.batch_size, *self.dim, self.n_channels))
+        y = np.empty((self.batch_size), dtype=int)
+
+        # Generate data
+        for i, ID in enumerate(list_IDs_temp):
+            # Store sample
+            X[i,] = np.load('data/' + ID + '.npy')
+
+            # Store class
+            y[i] = self.labels[ID]
+
+        return X, keras.utils.to_categorical(y, num_classes=self.n_classes)
+</code></pre>
 <h2 id="reference">Reference:<br></h2>
 <ol>
 <li><a href="https://ai-how.github.io/2018-05-27-Input-pipeline-for-deep-learning-experiments/">Input pipeline for deep learning experiments in Keras, Tensorflow and Pytorch</a></li>
@@ -424,8 +521,9 @@ tf.queue.PriorityQueue(capacity, dtypes)
 <li><a href="https://www.tensorflow.org/api_docs/python/tf/queue/FIFOQueue">FIFOQueue in tensorflow</a></li>
 <li><a href="https://blog.fnp.dev/keras-a-thing-you-should-know-about-keras-if-you-plan-to-train-a-deep-learning-model-on-a-large-fdd63ce66bd2">A thing you should know about Keras if you plan to train a deep learning model on a large dataset</a></li>
 <li><a href="https://blog.csdn.net/qq_32951799/article/details/82918098">csdn: fit_generator用法</a></li>
-<li><a href="https://www.cnblogs.com/wj-1314/p/8490822.html">generator 用法</a></li>
+<li><a href="https://stanford.edu/~shervine/blog/keras-how-to-generate-data-on-the-fly">A detailed example of how to use data generators with Keras</a></li>
 <li>A beginner's guide to data pipelines in Tensorflow 2.0</li>
+<li><a href="https://www.pyimagesearch.com/2018/12/24/how-to-use-keras-fit-and-fit_generator-a-hands-on-tutorial/">How to use Keras fit and fit_generator (a hands-on tutorial)</a></li>
 </ol>
                 
               
